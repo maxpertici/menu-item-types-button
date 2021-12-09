@@ -1,24 +1,30 @@
 <?php
 
-/*
+$url   = get_field( 'mitypes_button_url', $item->ID );
+$blank = get_field( 'mitypes_button_target_blank', $item->ID );
 
-$block_id = get_field('mitypes_wpblock_selector', $item->ID );
+if( ! isset( $url ) || '' === $url ){ return ; }
 
-if( isset( $block_id ) && (int) $block_id > 0 ){
+$attr = array(
+    'href'   => array(),
+    'title'  => array(),
+    'class'  => array(),
+    'target' => array(),
+);
 
-    echo $args->before;
-    echo '<div' . $attributes . '>';
+$a_tags = array(
+    'a'    => $attr,
+    'span' => $attr
+);
 
-    echo $args->link_before ;
+$a_tags = apply_filters( 'mitypes_wpkses_button_tags', $a_tags );
 
-    $content_post  = get_post( $block_id );
-    $block_content = $content_post->post_content;
-    echo apply_filters( 'the_content',  $block_content );
+$target = '_self' ;
 
-    echo $args->link_after;
-    
-    echo '</div>';
-    echo $args->after;
+if( isset( $blank ) && '1' === $blank ){ $target = '_blank' ; }
 
-}
-*/
+echo wp_kses( $args->before, $a_tags );
+echo '<a' . $attributes . ' href="' . esc_url( $url ) . '" target="' . esc_attr( $target ) . '">';
+    echo wp_kses( $args->link_before, $a_tags ) . esc_html( $item->post_title ) . wp_kses( $args->link_after, $a_tags );
+echo '</a>';
+echo wp_kses( $args->after, $a_tags );
