@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name:  Menu Item Types — Button
-Plugin URI:   #
+Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  Add the ability to use buttons in your nav menu
-Version:      1.0
+Version:      1.1
 Author:       @maxpertici
 Author URI:   https://maxpertici.fr
 Contributors:
