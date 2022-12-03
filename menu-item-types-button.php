@@ -3,7 +3,7 @@
 Plugin Name:  Menu Item Types — Button
 Plugin URI:   https://maxpertici.fr#menu-item-types
 Description:  Add the ability to use buttons in your nav menu
-Version:      1.1
+Version:      1.2
 Author:       @maxpertici
 Author URI:   https://maxpertici.fr
 Contributors:
@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) or	die();
 
 
 /**
- * Run plugin - test
+ * Run plugin - test
  * @since 1.0
  */
 
@@ -99,7 +99,7 @@ function mitypes_button_notice_plugin_required(){
     $mitypes_link = get_admin_url() . $mitypes_search_url ;
 
     echo '<div id="message" class="error notice is-dismissible">
-        <p>'. __( 'Please install and activate', 'menu-item-types') . ' ' . '<a href="'.$mitypes_link.'">Menu Item Types</a>'. ' ' . __('for using Menu Item Types — Button plugin.' , 'mitypes-button').'</p>
+        <p>'. __( 'Please install and activate', 'mitypes-button') . ' ' . '<a href="'.$mitypes_link.'">Menu Item Types</a>'. ' ' . __('for using Menu Item Types — Button plugin.' , 'mitypes-button').'</p>
     </div>';
 
     
