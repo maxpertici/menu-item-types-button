@@ -20,8 +20,7 @@ $a_tags = array(
 $a_tags = apply_filters( 'mitypes_wpkses_button_tags', $a_tags );
 
 $target = '_self' ;
-
-if( isset( $blank ) && '1' === $blank ){ $target = '_blank' ; }
+if( isset( $blank ) && ( '1' === $blank || true === $blank ) ){ $target = '_blank' ; }
 
 echo wp_kses( $args->before, $a_tags );
 echo '<a' . $attributes . ' href="' . esc_url( $url ) . '" target="' . esc_attr( $target ) . '">';
