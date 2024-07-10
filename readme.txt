@@ -9,6 +9,7 @@ Requires PHP: 7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+This Menu Item Types Add-on adds the possibility of adding buttons in your navigation menus.
 
 == Description ==
 This Menu Item Types Add-on adds the possibility of adding buttons in your navigation menus.
@@ -36,7 +37,7 @@ No, there are two dependencies:
 == Changelog ==
 
 = 1.3 =
-* Version bump
+* Fix target attribute
 * Register item type with the new function mitypes_register_type()
 * WP 6.6 ready
 
